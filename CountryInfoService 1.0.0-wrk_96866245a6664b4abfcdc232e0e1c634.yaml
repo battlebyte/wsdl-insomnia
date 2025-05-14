@@ -1,0 +1,3782 @@
+type: spec.insomnia.rest/5.0
+name: CountryInfoService 1.0.0
+meta:
+  id: wrk_96866245a6664b4abfcdc232e0e1c634
+  created: 1747218029559
+  modified: 1747218029559
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_6d39557d7afbeb0cbca764f62e25d842ce41f8b5
+    created: 1747218033247
+    modified: 1747218033247
+environments:
+  name: Base Environment
+  meta:
+    id: env_6d39557d7afbeb0cbca764f62e25d842ce41f8b5
+    created: 1747218033219
+    modified: 1747218033219
+    isPrivate: false
+spec:
+  contents:
+    openapi: 3.0.0
+    info:
+      title: CountryInfoService
+      description: >-
+        This DataFlex Web Service opens up country information. 2 letter ISO
+        codes
+                    are used for Country code. There are functions to retrieve the used Currency, Language,
+                    Capital City, Continent and Telephone code.
+      x-ibm-name: countryinfoservice
+      version: 1.0.0
+    x-ibm-configuration:
+      type: wsdl
+      phase: realized
+      enforced: true
+      testable: true
+      gateway: datapower-gateway
+      cors:
+        enabled: true
+      wsdl-definition:
+        wsdl: country-info-service.wsdl
+        service: CountryInfoService
+        port: CountryInfoServiceSoap
+        soap-version: "1.1"
+      assembly:
+        execute:
+          - proxy:
+              title: proxy
+              target-url: http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso
+      x-ibm-apiconnect-wsdl:
+        package-version: 2.0.36
+        messages:
+          info:
+            - message: The wsdl 'service' has multiple 'ports'. The api is generated using
+                information in the first soap 'port'.
+    paths:
+      /ListOfContinentsByName:
+        post:
+          summary: Operation ListOfContinentsByName
+          description: Returns a list of continents ordered by name.
+          operationId: ListOfContinentsByName
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfContine\
+              ntsByName"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfContinentsByNameInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfContinentsByNameOutput"
+      /ListOfContinentsByCode:
+        post:
+          summary: Operation ListOfContinentsByCode
+          description: Returns a list of continents ordered by code.
+          operationId: ListOfContinentsByCode
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfContine\
+              ntsByCode"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfContinentsByCodeInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfContinentsByCodeOutput"
+      /ListOfCurrenciesByName:
+        post:
+          summary: Operation ListOfCurrenciesByName
+          description: Returns a list of currencies ordered by name.
+          operationId: ListOfCurrenciesByName
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfCurrenc\
+              iesByName"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfCurrenciesByNameInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfCurrenciesByNameOutput"
+      /ListOfCurrenciesByCode:
+        post:
+          summary: Operation ListOfCurrenciesByCode
+          description: Returns a list of currencies ordered by code.
+          operationId: ListOfCurrenciesByCode
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfCurrenc\
+              iesByCode"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfCurrenciesByCodeInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfCurrenciesByCodeOutput"
+      /CurrencyName:
+        post:
+          summary: Operation CurrencyName
+          description: Returns the name of the currency (if found)
+          operationId: CurrencyName
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CurrencyName"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CurrencyNameInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CurrencyNameOutput"
+      /ListOfCountryNamesByCode:
+        post:
+          summary: Operation ListOfCountryNamesByCode
+          description: Returns a list of all stored counties ordered by ISO code
+          operationId: ListOfCountryNamesByCode
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfCountry\
+              NamesByCode"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfCountryNamesByCodeInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfCountryNamesByCodeOutput"
+      /ListOfCountryNamesByName:
+        post:
+          summary: Operation ListOfCountryNamesByName
+          description: Returns a list of all stored counties ordered by country name
+          operationId: ListOfCountryNamesByName
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfCountry\
+              NamesByName"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfCountryNamesByNameInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfCountryNamesByNameOutput"
+      /ListOfCountryNamesGroupedByContinent:
+        post:
+          summary: Operation ListOfCountryNamesGroupedByContinent
+          description: Returns a list of all stored counties grouped per continent
+          operationId: ListOfCountryNamesGroupedByContinent
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfCountry\
+              NamesGroupedByContinent"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfCountryNamesGroupedByContinentInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfCountryNamesGroupedByContinentOutput"
+      /CountryName:
+        post:
+          summary: Operation CountryName
+          description: Searches the database for a country by the passed ISO country code
+          operationId: CountryName
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CountryName"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CountryNameInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CountryNameOutput"
+      /CountryISOCode:
+        post:
+          summary: Operation CountryISOCode
+          description: This function tries to found a country based on the passed country
+            name.
+          operationId: CountryISOCode
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CountryISOCode"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CountryISOCodeInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CountryISOCodeOutput"
+      /CapitalCity:
+        post:
+          summary: Operation CapitalCity
+          description: Returns the name of the captial city for the passed country code
+          operationId: CapitalCity
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CapitalCity"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CapitalCityInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CapitalCityOutput"
+      /CountryCurrency:
+        post:
+          summary: Operation CountryCurrency
+          description: Returns the currency ISO code and name for the passed country ISO
+            code
+          operationId: CountryCurrency
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CountryCurrency"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CountryCurrencyInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CountryCurrencyOutput"
+      /CountryFlag:
+        post:
+          summary: Operation CountryFlag
+          description: Returns a link to a picture of the country flag
+          operationId: CountryFlag
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CountryFlag"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CountryFlagInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CountryFlagOutput"
+      /CountryIntPhoneCode:
+        post:
+          summary: Operation CountryIntPhoneCode
+          description: Returns the internation phone code for the passed ISO country code
+          operationId: CountryIntPhoneCode
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CountryIntPho\
+              neCode"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CountryIntPhoneCodeInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CountryIntPhoneCodeOutput"
+      /FullCountryInfo:
+        post:
+          summary: Operation FullCountryInfo
+          description: >-
+            Returns a struct with all the stored country information. Pass the
+            ISO
+                            country code
+          operationId: FullCountryInfo
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}FullCountryInfo"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/FullCountryInfoInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/FullCountryInfoOutput"
+      /FullCountryInfoAllCountries:
+        post:
+          summary: Operation FullCountryInfoAllCountries
+          description: |-
+            Returns an array with all countries and all the language information
+                            stored
+          operationId: FullCountryInfoAllCountries
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}FullCountryIn\
+              foAllCountries"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/FullCountryInfoAllCountriesInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/FullCountryInfoAllCountriesOutput"
+      /CountriesUsingCurrency:
+        post:
+          summary: Operation CountriesUsingCurrency
+          description: >-
+            Returns a list of all countries that use the same currency code.
+            Pass a
+                            ISO currency code
+          operationId: CountriesUsingCurrency
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}CountriesUsin\
+              gCurrency"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/CountriesUsingCurrencyInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/CountriesUsingCurrencyOutput"
+      /ListOfLanguagesByName:
+        post:
+          summary: Operation ListOfLanguagesByName
+          description: Returns an array of languages ordered by name
+          operationId: ListOfLanguagesByName
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfLanguag\
+              esByName"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfLanguagesByNameInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfLanguagesByNameOutput"
+      /ListOfLanguagesByCode:
+        post:
+          summary: Operation ListOfLanguagesByCode
+          description: Returns an array of languages ordered by code
+          operationId: ListOfLanguagesByCode
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}ListOfLanguag\
+              esByCode"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/ListOfLanguagesByCodeInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/ListOfLanguagesByCodeOutput"
+      /LanguageName:
+        post:
+          summary: Operation LanguageName
+          description: Find a language name based on the passed ISO language code
+          operationId: LanguageName
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}LanguageName"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/LanguageNameInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/LanguageNameOutput"
+      /LanguageISOCode:
+        post:
+          summary: Operation LanguageISOCode
+          description: Find a language ISO code based on the passed language name
+          operationId: LanguageISOCode
+          x-ibm-soap:
+            soap-operation: "{http://www.oorsprong.org/websamples.countryinfo}LanguageISOCode"
+          requestBody:
+            content:
+              text/xml:
+                schema:
+                  $ref: "#/components/schemas/LanguageISOCodeInput"
+            required: true
+          responses:
+            default:
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/LanguageISOCodeOutput"
+    servers:
+      - url: /CountryInfoService
+    components:
+      securitySchemes:
+        clientID:
+          type: apiKey
+          name: X-IBM-Client-Id
+          in: header
+      schemas:
+        Security:
+          xml:
+            namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+            prefix: wsse
+          description: Header for WS-Security
+          type: object
+          properties:
+            UsernameToken:
+              xml:
+                namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+                prefix: wsse
+              type: object
+              properties:
+                Username:
+                  xml:
+                    namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+                    prefix: wsse
+                  type: string
+                Password:
+                  xml:
+                    namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+                    prefix: wsse
+                  type: string
+                Nonce:
+                  xml:
+                    namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+                    prefix: wsse
+                  type: string
+                  properties:
+                    EncodingType:
+                      xml:
+                        attribute: true
+                      type: string
+                Created:
+                  xml:
+                    namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+                    prefix: wsu
+                  type: string
+            Timestamp:
+              xml:
+                namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+                prefix: wsu
+              type: object
+              properties:
+                Created:
+                  xml:
+                    namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+                    prefix: wsu
+                  type: string
+                Expires:
+                  xml:
+                    namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+                    prefix: wsu
+                  type: string
+                Id:
+                  xml:
+                    namespace: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+                    prefix: wsu
+                    attribute: true
+                  type: string
+        ListOfContinentsByNameInput:
+          description: Input message for wsdl operation ListOfContinentsByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfContinentsByNameHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfContinentsByName:
+                      $ref: "#/components/schemas/ListOfContinentsByName_element_tns"
+                  required:
+                    - ListOfContinentsByName
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfContinentsByName
+            wsdl-message-direction-or-name: ListOfContinentsByNameRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfContinentsByName xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfContinentsByName>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfContinentsByNameHeader:
+          description: Input headers for wsdl operation ListOfContinentsByName
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfContinentsByNameOutput:
+          description: Output message for wsdl operation ListOfContinentsByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfContinentsByNameResponse:
+                      $ref: "#/components/schemas/ListOfContinentsByNameResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfContinentsByName
+            wsdl-message-direction-or-name: ListOfContinentsByNameResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfContinentsByNameResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfContinentsByNameResult><!-- mandatory -->
+                <tns:tContinent><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sCode><!-- mandatory -->string</tns:sCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tContinent>
+               </tns:ListOfContinentsByNameResult>
+              </tns:ListOfContinentsByNameResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfContinentsByCodeInput:
+          description: Input message for wsdl operation ListOfContinentsByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfContinentsByCodeHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfContinentsByCode:
+                      $ref: "#/components/schemas/ListOfContinentsByCode_element_tns"
+                  required:
+                    - ListOfContinentsByCode
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfContinentsByCode
+            wsdl-message-direction-or-name: ListOfContinentsByCodeRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfContinentsByCode xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfContinentsByCode>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfContinentsByCodeHeader:
+          description: Input headers for wsdl operation ListOfContinentsByCode
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfContinentsByCodeOutput:
+          description: Output message for wsdl operation ListOfContinentsByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfContinentsByCodeResponse:
+                      $ref: "#/components/schemas/ListOfContinentsByCodeResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfContinentsByCode
+            wsdl-message-direction-or-name: ListOfContinentsByCodeResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfContinentsByCodeResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfContinentsByCodeResult><!-- mandatory -->
+                <tns:tContinent><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sCode><!-- mandatory -->string</tns:sCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tContinent>
+               </tns:ListOfContinentsByCodeResult>
+              </tns:ListOfContinentsByCodeResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCurrenciesByNameInput:
+          description: Input message for wsdl operation ListOfCurrenciesByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfCurrenciesByNameHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCurrenciesByName:
+                      $ref: "#/components/schemas/ListOfCurrenciesByName_element_tns"
+                  required:
+                    - ListOfCurrenciesByName
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCurrenciesByName
+            wsdl-message-direction-or-name: ListOfCurrenciesByNameRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfCurrenciesByName xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfCurrenciesByName>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCurrenciesByNameHeader:
+          description: Input headers for wsdl operation ListOfCurrenciesByName
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfCurrenciesByNameOutput:
+          description: Output message for wsdl operation ListOfCurrenciesByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCurrenciesByNameResponse:
+                      $ref: "#/components/schemas/ListOfCurrenciesByNameResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCurrenciesByName
+            wsdl-message-direction-or-name: ListOfCurrenciesByNameResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfCurrenciesByNameResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfCurrenciesByNameResult><!-- mandatory -->
+                <tns:tCurrency><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tCurrency>
+               </tns:ListOfCurrenciesByNameResult>
+              </tns:ListOfCurrenciesByNameResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCurrenciesByCodeInput:
+          description: Input message for wsdl operation ListOfCurrenciesByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfCurrenciesByCodeHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCurrenciesByCode:
+                      $ref: "#/components/schemas/ListOfCurrenciesByCode_element_tns"
+                  required:
+                    - ListOfCurrenciesByCode
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCurrenciesByCode
+            wsdl-message-direction-or-name: ListOfCurrenciesByCodeRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfCurrenciesByCode xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfCurrenciesByCode>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCurrenciesByCodeHeader:
+          description: Input headers for wsdl operation ListOfCurrenciesByCode
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfCurrenciesByCodeOutput:
+          description: Output message for wsdl operation ListOfCurrenciesByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCurrenciesByCodeResponse:
+                      $ref: "#/components/schemas/ListOfCurrenciesByCodeResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCurrenciesByCode
+            wsdl-message-direction-or-name: ListOfCurrenciesByCodeResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfCurrenciesByCodeResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfCurrenciesByCodeResult><!-- mandatory -->
+                <tns:tCurrency><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tCurrency>
+               </tns:ListOfCurrenciesByCodeResult>
+              </tns:ListOfCurrenciesByCodeResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CurrencyNameInput:
+          description: Input message for wsdl operation CurrencyName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CurrencyNameHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CurrencyName:
+                      $ref: "#/components/schemas/CurrencyName_element_tns"
+                  required:
+                    - CurrencyName
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CurrencyName
+            wsdl-message-direction-or-name: CurrencyNameRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CurrencyName xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCurrencyISOCode><!-- mandatory -->string</tns:sCurrencyISOCode>
+              </tns:CurrencyName>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CurrencyNameHeader:
+          description: Input headers for wsdl operation CurrencyName
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CurrencyNameOutput:
+          description: Output message for wsdl operation CurrencyName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CurrencyNameResponse:
+                      $ref: "#/components/schemas/CurrencyNameResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CurrencyName
+            wsdl-message-direction-or-name: CurrencyNameResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CurrencyNameResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CurrencyNameResult><!-- mandatory -->string</tns:CurrencyNameResult>
+              </tns:CurrencyNameResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCountryNamesByCodeInput:
+          description: Input message for wsdl operation ListOfCountryNamesByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfCountryNamesByCodeHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCountryNamesByCode:
+                      $ref: "#/components/schemas/ListOfCountryNamesByCode_element_tns"
+                  required:
+                    - ListOfCountryNamesByCode
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCountryNamesByCode
+            wsdl-message-direction-or-name: ListOfCountryNamesByCodeRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfCountryNamesByCode xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfCountryNamesByCode>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCountryNamesByCodeHeader:
+          description: Input headers for wsdl operation ListOfCountryNamesByCode
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfCountryNamesByCodeOutput:
+          description: Output message for wsdl operation ListOfCountryNamesByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCountryNamesByCodeResponse:
+                      $ref: "#/components/schemas/ListOfCountryNamesByCodeResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCountryNamesByCode
+            wsdl-message-direction-or-name: ListOfCountryNamesByCodeResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfCountryNamesByCodeResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfCountryNamesByCodeResult><!-- mandatory -->
+                <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tCountryCodeAndName>
+               </tns:ListOfCountryNamesByCodeResult>
+              </tns:ListOfCountryNamesByCodeResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCountryNamesByNameInput:
+          description: Input message for wsdl operation ListOfCountryNamesByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfCountryNamesByNameHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCountryNamesByName:
+                      $ref: "#/components/schemas/ListOfCountryNamesByName_element_tns"
+                  required:
+                    - ListOfCountryNamesByName
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCountryNamesByName
+            wsdl-message-direction-or-name: ListOfCountryNamesByNameRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfCountryNamesByName xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfCountryNamesByName>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCountryNamesByNameHeader:
+          description: Input headers for wsdl operation ListOfCountryNamesByName
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfCountryNamesByNameOutput:
+          description: Output message for wsdl operation ListOfCountryNamesByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCountryNamesByNameResponse:
+                      $ref: "#/components/schemas/ListOfCountryNamesByNameResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCountryNamesByName
+            wsdl-message-direction-or-name: ListOfCountryNamesByNameResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfCountryNamesByNameResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfCountryNamesByNameResult><!-- mandatory -->
+                <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tCountryCodeAndName>
+               </tns:ListOfCountryNamesByNameResult>
+              </tns:ListOfCountryNamesByNameResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCountryNamesGroupedByContinentInput:
+          description: Input message for wsdl operation ListOfCountryNamesGroupedByContinent
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfCountryNamesGroupedByContinentHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCountryNamesGroupedByContinent:
+                      $ref: "#/components/schemas/ListOfCountryNamesGroupedByContinent_element_tns"
+                  required:
+                    - ListOfCountryNamesGroupedByContinent
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCountryNamesGroupedByContinent
+            wsdl-message-direction-or-name: ListOfCountryNamesGroupedByContinentRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfCountryNamesGroupedByContinent xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfCountryNamesGroupedByContinent>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfCountryNamesGroupedByContinentHeader:
+          description: Input headers for wsdl operation ListOfCountryNamesGroupedByContinent
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfCountryNamesGroupedByContinentOutput:
+          description: Output message for wsdl operation
+            ListOfCountryNamesGroupedByContinent
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfCountryNamesGroupedByContinentResponse:
+                      $ref: "#/components/schemas/ListOfCountryNamesGroupedByContinentResponse_elemen\
+                        t_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfCountryNamesGroupedByContinent
+            wsdl-message-direction-or-name: ListOfCountryNamesGroupedByContinentResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfCountryNamesGroupedByContinentResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfCountryNamesGroupedByContinentResult><!-- mandatory -->
+                <tns:tCountryCodeAndNameGroupedByContinent><!-- between zero and unlimited repetitions of this element -->
+                 <tns:Continent><!-- mandatory -->
+                  <tns:sCode><!-- mandatory -->string</tns:sCode>
+                  <tns:sName><!-- mandatory -->string</tns:sName>
+                 </tns:Continent>
+                 <tns:CountryCodeAndNames><!-- mandatory -->
+                  <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+                   <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                   <tns:sName><!-- mandatory -->string</tns:sName>
+                  </tns:tCountryCodeAndName>
+                 </tns:CountryCodeAndNames>
+                </tns:tCountryCodeAndNameGroupedByContinent>
+               </tns:ListOfCountryNamesGroupedByContinentResult>
+              </tns:ListOfCountryNamesGroupedByContinentResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryNameInput:
+          description: Input message for wsdl operation CountryName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CountryNameHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryName:
+                      $ref: "#/components/schemas/CountryName_element_tns"
+                  required:
+                    - CountryName
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryName
+            wsdl-message-direction-or-name: CountryNameRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CountryName xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+              </tns:CountryName>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryNameHeader:
+          description: Input headers for wsdl operation CountryName
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CountryNameOutput:
+          description: Output message for wsdl operation CountryName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryNameResponse:
+                      $ref: "#/components/schemas/CountryNameResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryName
+            wsdl-message-direction-or-name: CountryNameResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CountryNameResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CountryNameResult><!-- mandatory -->string</tns:CountryNameResult>
+              </tns:CountryNameResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryISOCodeInput:
+          description: Input message for wsdl operation CountryISOCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CountryISOCodeHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryISOCode:
+                      $ref: "#/components/schemas/CountryISOCode_element_tns"
+                  required:
+                    - CountryISOCode
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryISOCode
+            wsdl-message-direction-or-name: CountryISOCodeRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CountryISOCode xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCountryName><!-- mandatory -->string</tns:sCountryName>
+              </tns:CountryISOCode>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryISOCodeHeader:
+          description: Input headers for wsdl operation CountryISOCode
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CountryISOCodeOutput:
+          description: Output message for wsdl operation CountryISOCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryISOCodeResponse:
+                      $ref: "#/components/schemas/CountryISOCodeResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryISOCode
+            wsdl-message-direction-or-name: CountryISOCodeResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CountryISOCodeResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CountryISOCodeResult><!-- mandatory -->string</tns:CountryISOCodeResult>
+              </tns:CountryISOCodeResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CapitalCityInput:
+          description: Input message for wsdl operation CapitalCity
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CapitalCityHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CapitalCity:
+                      $ref: "#/components/schemas/CapitalCity_element_tns"
+                  required:
+                    - CapitalCity
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CapitalCity
+            wsdl-message-direction-or-name: CapitalCityRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CapitalCity xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+              </tns:CapitalCity>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CapitalCityHeader:
+          description: Input headers for wsdl operation CapitalCity
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CapitalCityOutput:
+          description: Output message for wsdl operation CapitalCity
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CapitalCityResponse:
+                      $ref: "#/components/schemas/CapitalCityResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CapitalCity
+            wsdl-message-direction-or-name: CapitalCityResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CapitalCityResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CapitalCityResult><!-- mandatory -->string</tns:CapitalCityResult>
+              </tns:CapitalCityResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryCurrencyInput:
+          description: Input message for wsdl operation CountryCurrency
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CountryCurrencyHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryCurrency:
+                      $ref: "#/components/schemas/CountryCurrency_element_tns"
+                  required:
+                    - CountryCurrency
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryCurrency
+            wsdl-message-direction-or-name: CountryCurrencyRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CountryCurrency xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+              </tns:CountryCurrency>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryCurrencyHeader:
+          description: Input headers for wsdl operation CountryCurrency
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CountryCurrencyOutput:
+          description: Output message for wsdl operation CountryCurrency
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryCurrencyResponse:
+                      $ref: "#/components/schemas/CountryCurrencyResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryCurrency
+            wsdl-message-direction-or-name: CountryCurrencyResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CountryCurrencyResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CountryCurrencyResult><!-- mandatory -->
+                <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                <tns:sName><!-- mandatory -->string</tns:sName>
+               </tns:CountryCurrencyResult>
+              </tns:CountryCurrencyResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryFlagInput:
+          description: Input message for wsdl operation CountryFlag
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CountryFlagHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryFlag:
+                      $ref: "#/components/schemas/CountryFlag_element_tns"
+                  required:
+                    - CountryFlag
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryFlag
+            wsdl-message-direction-or-name: CountryFlagRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CountryFlag xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+              </tns:CountryFlag>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryFlagHeader:
+          description: Input headers for wsdl operation CountryFlag
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CountryFlagOutput:
+          description: Output message for wsdl operation CountryFlag
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryFlagResponse:
+                      $ref: "#/components/schemas/CountryFlagResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryFlag
+            wsdl-message-direction-or-name: CountryFlagResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CountryFlagResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CountryFlagResult><!-- mandatory -->string</tns:CountryFlagResult>
+              </tns:CountryFlagResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryIntPhoneCodeInput:
+          description: Input message for wsdl operation CountryIntPhoneCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CountryIntPhoneCodeHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryIntPhoneCode:
+                      $ref: "#/components/schemas/CountryIntPhoneCode_element_tns"
+                  required:
+                    - CountryIntPhoneCode
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryIntPhoneCode
+            wsdl-message-direction-or-name: CountryIntPhoneCodeRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CountryIntPhoneCode xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+              </tns:CountryIntPhoneCode>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountryIntPhoneCodeHeader:
+          description: Input headers for wsdl operation CountryIntPhoneCode
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CountryIntPhoneCodeOutput:
+          description: Output message for wsdl operation CountryIntPhoneCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountryIntPhoneCodeResponse:
+                      $ref: "#/components/schemas/CountryIntPhoneCodeResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountryIntPhoneCode
+            wsdl-message-direction-or-name: CountryIntPhoneCodeResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CountryIntPhoneCodeResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CountryIntPhoneCodeResult><!-- mandatory -->string</tns:CountryIntPhoneCodeResult>
+              </tns:CountryIntPhoneCodeResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        FullCountryInfoInput:
+          description: Input message for wsdl operation FullCountryInfo
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/FullCountryInfoHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    FullCountryInfo:
+                      $ref: "#/components/schemas/FullCountryInfo_element_tns"
+                  required:
+                    - FullCountryInfo
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: FullCountryInfo
+            wsdl-message-direction-or-name: FullCountryInfoRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:FullCountryInfo xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+              </tns:FullCountryInfo>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        FullCountryInfoHeader:
+          description: Input headers for wsdl operation FullCountryInfo
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        FullCountryInfoOutput:
+          description: Output message for wsdl operation FullCountryInfo
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    FullCountryInfoResponse:
+                      $ref: "#/components/schemas/FullCountryInfoResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: FullCountryInfo
+            wsdl-message-direction-or-name: FullCountryInfoResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:FullCountryInfoResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:FullCountryInfoResult><!-- mandatory -->
+                <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                <tns:sName><!-- mandatory -->string</tns:sName>
+                <tns:sCapitalCity><!-- mandatory -->string</tns:sCapitalCity>
+                <tns:sPhoneCode><!-- mandatory -->string</tns:sPhoneCode>
+                <tns:sContinentCode><!-- mandatory -->string</tns:sContinentCode>
+                <tns:sCurrencyISOCode><!-- mandatory -->string</tns:sCurrencyISOCode>
+                <tns:sCountryFlag><!-- mandatory -->string</tns:sCountryFlag>
+                <tns:Languages><!-- mandatory -->
+                 <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+                  <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                  <tns:sName><!-- mandatory -->string</tns:sName>
+                 </tns:tLanguage>
+                </tns:Languages>
+               </tns:FullCountryInfoResult>
+              </tns:FullCountryInfoResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        FullCountryInfoAllCountriesInput:
+          description: Input message for wsdl operation FullCountryInfoAllCountries
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/FullCountryInfoAllCountriesHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    FullCountryInfoAllCountries:
+                      $ref: "#/components/schemas/FullCountryInfoAllCountries_element_tns"
+                  required:
+                    - FullCountryInfoAllCountries
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: FullCountryInfoAllCountries
+            wsdl-message-direction-or-name: FullCountryInfoAllCountriesRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:FullCountryInfoAllCountries xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:FullCountryInfoAllCountries>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        FullCountryInfoAllCountriesHeader:
+          description: Input headers for wsdl operation FullCountryInfoAllCountries
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        FullCountryInfoAllCountriesOutput:
+          description: Output message for wsdl operation FullCountryInfoAllCountries
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    FullCountryInfoAllCountriesResponse:
+                      $ref: "#/components/schemas/FullCountryInfoAllCountriesResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: FullCountryInfoAllCountries
+            wsdl-message-direction-or-name: FullCountryInfoAllCountriesResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:FullCountryInfoAllCountriesResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:FullCountryInfoAllCountriesResult><!-- mandatory -->
+                <tns:tCountryInfo><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                 <tns:sCapitalCity><!-- mandatory -->string</tns:sCapitalCity>
+                 <tns:sPhoneCode><!-- mandatory -->string</tns:sPhoneCode>
+                 <tns:sContinentCode><!-- mandatory -->string</tns:sContinentCode>
+                 <tns:sCurrencyISOCode><!-- mandatory -->string</tns:sCurrencyISOCode>
+                 <tns:sCountryFlag><!-- mandatory -->string</tns:sCountryFlag>
+                 <tns:Languages><!-- mandatory -->
+                  <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+                   <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                   <tns:sName><!-- mandatory -->string</tns:sName>
+                  </tns:tLanguage>
+                 </tns:Languages>
+                </tns:tCountryInfo>
+               </tns:FullCountryInfoAllCountriesResult>
+              </tns:FullCountryInfoAllCountriesResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountriesUsingCurrencyInput:
+          description: Input message for wsdl operation CountriesUsingCurrency
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/CountriesUsingCurrencyHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountriesUsingCurrency:
+                      $ref: "#/components/schemas/CountriesUsingCurrency_element_tns"
+                  required:
+                    - CountriesUsingCurrency
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountriesUsingCurrency
+            wsdl-message-direction-or-name: CountriesUsingCurrencyRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:CountriesUsingCurrency xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sISOCurrencyCode><!-- mandatory -->string</tns:sISOCurrencyCode>
+              </tns:CountriesUsingCurrency>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        CountriesUsingCurrencyHeader:
+          description: Input headers for wsdl operation CountriesUsingCurrency
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        CountriesUsingCurrencyOutput:
+          description: Output message for wsdl operation CountriesUsingCurrency
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    CountriesUsingCurrencyResponse:
+                      $ref: "#/components/schemas/CountriesUsingCurrencyResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: CountriesUsingCurrency
+            wsdl-message-direction-or-name: CountriesUsingCurrencyResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:CountriesUsingCurrencyResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:CountriesUsingCurrencyResult><!-- mandatory -->
+                <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tCountryCodeAndName>
+               </tns:CountriesUsingCurrencyResult>
+              </tns:CountriesUsingCurrencyResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfLanguagesByNameInput:
+          description: Input message for wsdl operation ListOfLanguagesByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfLanguagesByNameHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfLanguagesByName:
+                      $ref: "#/components/schemas/ListOfLanguagesByName_element_tns"
+                  required:
+                    - ListOfLanguagesByName
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfLanguagesByName
+            wsdl-message-direction-or-name: ListOfLanguagesByNameRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfLanguagesByName xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfLanguagesByName>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfLanguagesByNameHeader:
+          description: Input headers for wsdl operation ListOfLanguagesByName
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfLanguagesByNameOutput:
+          description: Output message for wsdl operation ListOfLanguagesByName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfLanguagesByNameResponse:
+                      $ref: "#/components/schemas/ListOfLanguagesByNameResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfLanguagesByName
+            wsdl-message-direction-or-name: ListOfLanguagesByNameResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfLanguagesByNameResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfLanguagesByNameResult><!-- mandatory -->
+                <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tLanguage>
+               </tns:ListOfLanguagesByNameResult>
+              </tns:ListOfLanguagesByNameResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfLanguagesByCodeInput:
+          description: Input message for wsdl operation ListOfLanguagesByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/ListOfLanguagesByCodeHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfLanguagesByCode:
+                      $ref: "#/components/schemas/ListOfLanguagesByCode_element_tns"
+                  required:
+                    - ListOfLanguagesByCode
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfLanguagesByCode
+            wsdl-message-direction-or-name: ListOfLanguagesByCodeRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:ListOfLanguagesByCode xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory --></tns:ListOfLanguagesByCode>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfLanguagesByCodeHeader:
+          description: Input headers for wsdl operation ListOfLanguagesByCode
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        ListOfLanguagesByCodeOutput:
+          description: Output message for wsdl operation ListOfLanguagesByCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    ListOfLanguagesByCodeResponse:
+                      $ref: "#/components/schemas/ListOfLanguagesByCodeResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: ListOfLanguagesByCode
+            wsdl-message-direction-or-name: ListOfLanguagesByCodeResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:ListOfLanguagesByCodeResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:ListOfLanguagesByCodeResult><!-- mandatory -->
+                <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tLanguage>
+               </tns:ListOfLanguagesByCodeResult>
+              </tns:ListOfLanguagesByCodeResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        LanguageNameInput:
+          description: Input message for wsdl operation LanguageName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/LanguageNameHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    LanguageName:
+                      $ref: "#/components/schemas/LanguageName_element_tns"
+                  required:
+                    - LanguageName
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: LanguageName
+            wsdl-message-direction-or-name: LanguageNameRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:LanguageName xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+              </tns:LanguageName>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        LanguageNameHeader:
+          description: Input headers for wsdl operation LanguageName
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        LanguageNameOutput:
+          description: Output message for wsdl operation LanguageName
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    LanguageNameResponse:
+                      $ref: "#/components/schemas/LanguageNameResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: LanguageName
+            wsdl-message-direction-or-name: LanguageNameResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:LanguageNameResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:LanguageNameResult><!-- mandatory -->string</tns:LanguageNameResult>
+              </tns:LanguageNameResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        LanguageISOCodeInput:
+          description: Input message for wsdl operation LanguageISOCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Header:
+                  $ref: "#/components/schemas/LanguageISOCodeHeader"
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    LanguageISOCode:
+                      $ref: "#/components/schemas/LanguageISOCode_element_tns"
+                  required:
+                    - LanguageISOCode
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: LanguageISOCode
+            wsdl-message-direction-or-name: LanguageISOCodeRequest
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Header>
+              <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+               <wsse:UsernameToken>
+                <wsse:Username>string</wsse:Username>
+                <wsse:Password>string</wsse:Password>
+                <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+                <wsu:Created>string</wsu:Created>
+               </wsse:UsernameToken>
+               <wsu:Timestamp wsu:Id="string">
+                <wsu:Created>string</wsu:Created>
+                <wsu:Expires>string</wsu:Expires>
+               </wsu:Timestamp>
+              </wsse:Security>
+             </soapenv:Header>
+             <soapenv:Body>
+              <tns:LanguageISOCode xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"><!-- mandatory -->
+               <tns:sLanguageName><!-- mandatory -->string</tns:sLanguageName>
+              </tns:LanguageISOCode>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        LanguageISOCodeHeader:
+          description: Input headers for wsdl operation LanguageISOCode
+          type: object
+          properties:
+            Security:
+              $ref: "#/components/schemas/Security"
+        LanguageISOCodeOutput:
+          description: Output message for wsdl operation LanguageISOCode
+          type: object
+          properties:
+            Envelope:
+              xml:
+                namespace: http://schemas.xmlsoap.org/soap/envelope/
+                prefix: soapenv
+              type: object
+              properties:
+                Body:
+                  xml:
+                    namespace: http://schemas.xmlsoap.org/soap/envelope/
+                    prefix: soapenv
+                  type: object
+                  properties:
+                    LanguageISOCodeResponse:
+                      $ref: "#/components/schemas/LanguageISOCodeResponse_element_tns"
+              required:
+                - Body
+          required:
+            - Envelope
+          x-ibm-schema:
+            wsdl-port: "{http://www.oorsprong.org/websamples.countryinfo}CountryInfoService\
+              Soap"
+            wsdl-operation: LanguageISOCode
+            wsdl-message-direction-or-name: LanguageISOCodeResponse
+          example: >-
+            
+            <soapenv:Envelope
+            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+             <soapenv:Body>
+              <tns:LanguageISOCodeResponse xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+               <tns:LanguageISOCodeResult><!-- mandatory -->string</tns:LanguageISOCodeResult>
+              </tns:LanguageISOCodeResponse>
+             </soapenv:Body>
+            </soapenv:Envelope>
+        ListOfContinentsByName_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfContinentsByName
+          type: object
+          example: >-
+            
+            <tns:ListOfContinentsByName
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfContinentsByName>
+        ListOfContinentsByNameResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfContinentsByNameResponse
+          type: object
+          properties:
+            ListOfContinentsByNameResult:
+              $ref: "#/components/schemas/ArrayOftContinent_type_tns"
+          required:
+            - ListOfContinentsByNameResult
+          example: >-
+            
+            <tns:ListOfContinentsByNameResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfContinentsByNameResult><!-- mandatory -->
+              <tns:tContinent><!-- between zero and unlimited repetitions of this element -->
+               <tns:sCode><!-- mandatory -->string</tns:sCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tContinent>
+             </tns:ListOfContinentsByNameResult>
+            </tns:ListOfContinentsByNameResponse>
+        ListOfContinentsByCode_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfContinentsByCode
+          type: object
+          example: >-
+            
+            <tns:ListOfContinentsByCode
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfContinentsByCode>
+        ListOfContinentsByCodeResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfContinentsByCodeResponse
+          type: object
+          properties:
+            ListOfContinentsByCodeResult:
+              $ref: "#/components/schemas/ArrayOftContinent_type_tns"
+          required:
+            - ListOfContinentsByCodeResult
+          example: >-
+            
+            <tns:ListOfContinentsByCodeResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfContinentsByCodeResult><!-- mandatory -->
+              <tns:tContinent><!-- between zero and unlimited repetitions of this element -->
+               <tns:sCode><!-- mandatory -->string</tns:sCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tContinent>
+             </tns:ListOfContinentsByCodeResult>
+            </tns:ListOfContinentsByCodeResponse>
+        ListOfCurrenciesByName_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCurrenciesByName
+          type: object
+          example: >-
+            
+            <tns:ListOfCurrenciesByName
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfCurrenciesByName>
+        ListOfCurrenciesByNameResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCurrenciesByNameResponse
+          type: object
+          properties:
+            ListOfCurrenciesByNameResult:
+              $ref: "#/components/schemas/ArrayOftCurrency_type_tns"
+          required:
+            - ListOfCurrenciesByNameResult
+          example: >-
+            
+            <tns:ListOfCurrenciesByNameResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfCurrenciesByNameResult><!-- mandatory -->
+              <tns:tCurrency><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tCurrency>
+             </tns:ListOfCurrenciesByNameResult>
+            </tns:ListOfCurrenciesByNameResponse>
+        ListOfCurrenciesByCode_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCurrenciesByCode
+          type: object
+          example: >-
+            
+            <tns:ListOfCurrenciesByCode
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfCurrenciesByCode>
+        ListOfCurrenciesByCodeResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCurrenciesByCodeResponse
+          type: object
+          properties:
+            ListOfCurrenciesByCodeResult:
+              $ref: "#/components/schemas/ArrayOftCurrency_type_tns"
+          required:
+            - ListOfCurrenciesByCodeResult
+          example: >-
+            
+            <tns:ListOfCurrenciesByCodeResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfCurrenciesByCodeResult><!-- mandatory -->
+              <tns:tCurrency><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tCurrency>
+             </tns:ListOfCurrenciesByCodeResult>
+            </tns:ListOfCurrenciesByCodeResponse>
+        CurrencyName_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CurrencyName
+          type: object
+          properties:
+            sCurrencyISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCurrencyISOCode
+          example: >-
+            
+            <tns:CurrencyName
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCurrencyISOCode><!-- mandatory -->string</tns:sCurrencyISOCode>
+            </tns:CurrencyName>
+        CurrencyNameResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CurrencyNameResponse
+          type: object
+          properties:
+            CurrencyNameResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - CurrencyNameResult
+          example: >-
+            
+            <tns:CurrencyNameResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CurrencyNameResult><!-- mandatory -->string</tns:CurrencyNameResult>
+            </tns:CurrencyNameResponse>
+        ListOfCountryNamesByCode_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCountryNamesByCode
+          type: object
+          example: >-
+            
+            <tns:ListOfCountryNamesByCode
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfCountryNamesByCode>
+        ListOfCountryNamesByCodeResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCountryNamesByCodeResponse
+          type: object
+          properties:
+            ListOfCountryNamesByCodeResult:
+              $ref: "#/components/schemas/ArrayOftCountryCodeAndName_type_tns"
+          required:
+            - ListOfCountryNamesByCodeResult
+          example: >-
+            
+            <tns:ListOfCountryNamesByCodeResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfCountryNamesByCodeResult><!-- mandatory -->
+              <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tCountryCodeAndName>
+             </tns:ListOfCountryNamesByCodeResult>
+            </tns:ListOfCountryNamesByCodeResponse>
+        ListOfCountryNamesByName_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCountryNamesByName
+          type: object
+          example: >-
+            
+            <tns:ListOfCountryNamesByName
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfCountryNamesByName>
+        ListOfCountryNamesByNameResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCountryNamesByNameResponse
+          type: object
+          properties:
+            ListOfCountryNamesByNameResult:
+              $ref: "#/components/schemas/ArrayOftCountryCodeAndName_type_tns"
+          required:
+            - ListOfCountryNamesByNameResult
+          example: >-
+            
+            <tns:ListOfCountryNamesByNameResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfCountryNamesByNameResult><!-- mandatory -->
+              <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tCountryCodeAndName>
+             </tns:ListOfCountryNamesByNameResult>
+            </tns:ListOfCountryNamesByNameResponse>
+        ListOfCountryNamesGroupedByContinent_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCountryNamesGroupedByContinent
+          type: object
+          example: >-
+            
+            <tns:ListOfCountryNamesGroupedByContinent
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfCountryNamesGroupedByContinent>
+        ListOfCountryNamesGroupedByContinentResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfCountryNamesGroupedByContinentResponse
+          type: object
+          properties:
+            ListOfCountryNamesGroupedByContinentResult:
+              $ref: "#/components/schemas/ArrayOftCountryCodeAndNameGroupedByContinent_type_t\
+                ns"
+          required:
+            - ListOfCountryNamesGroupedByContinentResult
+          example: >-
+            
+            <tns:ListOfCountryNamesGroupedByContinentResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfCountryNamesGroupedByContinentResult><!-- mandatory -->
+              <tns:tCountryCodeAndNameGroupedByContinent><!-- between zero and unlimited repetitions of this element -->
+               <tns:Continent><!-- mandatory -->
+                <tns:sCode><!-- mandatory -->string</tns:sCode>
+                <tns:sName><!-- mandatory -->string</tns:sName>
+               </tns:Continent>
+               <tns:CountryCodeAndNames><!-- mandatory -->
+                <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tCountryCodeAndName>
+               </tns:CountryCodeAndNames>
+              </tns:tCountryCodeAndNameGroupedByContinent>
+             </tns:ListOfCountryNamesGroupedByContinentResult>
+            </tns:ListOfCountryNamesGroupedByContinentResponse>
+        CountryName_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryName
+          type: object
+          properties:
+            sCountryISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCountryISOCode
+          example: >-
+            
+            <tns:CountryName
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+            </tns:CountryName>
+        CountryNameResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryNameResponse
+          type: object
+          properties:
+            CountryNameResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - CountryNameResult
+          example: >-
+            
+            <tns:CountryNameResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CountryNameResult><!-- mandatory -->string</tns:CountryNameResult>
+            </tns:CountryNameResponse>
+        CountryISOCode_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryISOCode
+          type: object
+          properties:
+            sCountryName:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCountryName
+          example: >-
+            
+            <tns:CountryISOCode
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCountryName><!-- mandatory -->string</tns:sCountryName>
+            </tns:CountryISOCode>
+        CountryISOCodeResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryISOCodeResponse
+          type: object
+          properties:
+            CountryISOCodeResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - CountryISOCodeResult
+          example: >-
+            
+            <tns:CountryISOCodeResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CountryISOCodeResult><!-- mandatory -->string</tns:CountryISOCodeResult>
+            </tns:CountryISOCodeResponse>
+        CapitalCity_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CapitalCity
+          type: object
+          properties:
+            sCountryISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCountryISOCode
+          example: >-
+            
+            <tns:CapitalCity
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+            </tns:CapitalCity>
+        CapitalCityResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CapitalCityResponse
+          type: object
+          properties:
+            CapitalCityResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - CapitalCityResult
+          example: >-
+            
+            <tns:CapitalCityResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CapitalCityResult><!-- mandatory -->string</tns:CapitalCityResult>
+            </tns:CapitalCityResponse>
+        CountryCurrency_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryCurrency
+          type: object
+          properties:
+            sCountryISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCountryISOCode
+          example: >-
+            
+            <tns:CountryCurrency
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+            </tns:CountryCurrency>
+        CountryCurrencyResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryCurrencyResponse
+          type: object
+          properties:
+            CountryCurrencyResult:
+              $ref: "#/components/schemas/tCurrency_type_tns"
+          required:
+            - CountryCurrencyResult
+          example: >-
+            
+            <tns:CountryCurrencyResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CountryCurrencyResult><!-- mandatory -->
+              <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+              <tns:sName><!-- mandatory -->string</tns:sName>
+             </tns:CountryCurrencyResult>
+            </tns:CountryCurrencyResponse>
+        CountryFlag_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryFlag
+          type: object
+          properties:
+            sCountryISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCountryISOCode
+          example: >-
+            
+            <tns:CountryFlag
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+            </tns:CountryFlag>
+        CountryFlagResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryFlagResponse
+          type: object
+          properties:
+            CountryFlagResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - CountryFlagResult
+          example: >-
+            
+            <tns:CountryFlagResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CountryFlagResult><!-- mandatory -->string</tns:CountryFlagResult>
+            </tns:CountryFlagResponse>
+        CountryIntPhoneCode_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryIntPhoneCode
+          type: object
+          properties:
+            sCountryISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCountryISOCode
+          example: >-
+            
+            <tns:CountryIntPhoneCode
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+            </tns:CountryIntPhoneCode>
+        CountryIntPhoneCodeResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountryIntPhoneCodeResponse
+          type: object
+          properties:
+            CountryIntPhoneCodeResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - CountryIntPhoneCodeResult
+          example: >-
+            
+            <tns:CountryIntPhoneCodeResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CountryIntPhoneCodeResult><!-- mandatory -->string</tns:CountryIntPhoneCodeResult>
+            </tns:CountryIntPhoneCodeResponse>
+        FullCountryInfo_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: FullCountryInfo
+          type: object
+          properties:
+            sCountryISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCountryISOCode
+          example: >-
+            
+            <tns:FullCountryInfo
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sCountryISOCode><!-- mandatory -->string</tns:sCountryISOCode>
+            </tns:FullCountryInfo>
+        FullCountryInfoResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: FullCountryInfoResponse
+          type: object
+          properties:
+            FullCountryInfoResult:
+              $ref: "#/components/schemas/tCountryInfo_type_tns"
+          required:
+            - FullCountryInfoResult
+          example: >-
+            
+            <tns:FullCountryInfoResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:FullCountryInfoResult><!-- mandatory -->
+              <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+              <tns:sName><!-- mandatory -->string</tns:sName>
+              <tns:sCapitalCity><!-- mandatory -->string</tns:sCapitalCity>
+              <tns:sPhoneCode><!-- mandatory -->string</tns:sPhoneCode>
+              <tns:sContinentCode><!-- mandatory -->string</tns:sContinentCode>
+              <tns:sCurrencyISOCode><!-- mandatory -->string</tns:sCurrencyISOCode>
+              <tns:sCountryFlag><!-- mandatory -->string</tns:sCountryFlag>
+              <tns:Languages><!-- mandatory -->
+               <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+                <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                <tns:sName><!-- mandatory -->string</tns:sName>
+               </tns:tLanguage>
+              </tns:Languages>
+             </tns:FullCountryInfoResult>
+            </tns:FullCountryInfoResponse>
+        FullCountryInfoAllCountries_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: FullCountryInfoAllCountries
+          type: object
+          example: >-
+            
+            <tns:FullCountryInfoAllCountries
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:FullCountryInfoAllCountries>
+        FullCountryInfoAllCountriesResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: FullCountryInfoAllCountriesResponse
+          type: object
+          properties:
+            FullCountryInfoAllCountriesResult:
+              $ref: "#/components/schemas/ArrayOftCountryInfo_type_tns"
+          required:
+            - FullCountryInfoAllCountriesResult
+          example: >-
+            
+            <tns:FullCountryInfoAllCountriesResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:FullCountryInfoAllCountriesResult><!-- mandatory -->
+              <tns:tCountryInfo><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+               <tns:sCapitalCity><!-- mandatory -->string</tns:sCapitalCity>
+               <tns:sPhoneCode><!-- mandatory -->string</tns:sPhoneCode>
+               <tns:sContinentCode><!-- mandatory -->string</tns:sContinentCode>
+               <tns:sCurrencyISOCode><!-- mandatory -->string</tns:sCurrencyISOCode>
+               <tns:sCountryFlag><!-- mandatory -->string</tns:sCountryFlag>
+               <tns:Languages><!-- mandatory -->
+                <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+                 <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+                 <tns:sName><!-- mandatory -->string</tns:sName>
+                </tns:tLanguage>
+               </tns:Languages>
+              </tns:tCountryInfo>
+             </tns:FullCountryInfoAllCountriesResult>
+            </tns:FullCountryInfoAllCountriesResponse>
+        CountriesUsingCurrency_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountriesUsingCurrency
+          type: object
+          properties:
+            sISOCurrencyCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sISOCurrencyCode
+          example: >-
+            
+            <tns:CountriesUsingCurrency
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sISOCurrencyCode><!-- mandatory -->string</tns:sISOCurrencyCode>
+            </tns:CountriesUsingCurrency>
+        CountriesUsingCurrencyResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: CountriesUsingCurrencyResponse
+          type: object
+          properties:
+            CountriesUsingCurrencyResult:
+              $ref: "#/components/schemas/ArrayOftCountryCodeAndName_type_tns"
+          required:
+            - CountriesUsingCurrencyResult
+          example: >-
+            
+            <tns:CountriesUsingCurrencyResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:CountriesUsingCurrencyResult><!-- mandatory -->
+              <tns:tCountryCodeAndName><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tCountryCodeAndName>
+             </tns:CountriesUsingCurrencyResult>
+            </tns:CountriesUsingCurrencyResponse>
+        ListOfLanguagesByName_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfLanguagesByName
+          type: object
+          example: >-
+            
+            <tns:ListOfLanguagesByName
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfLanguagesByName>
+        ListOfLanguagesByNameResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfLanguagesByNameResponse
+          type: object
+          properties:
+            ListOfLanguagesByNameResult:
+              $ref: "#/components/schemas/ArrayOftLanguage_type_tns"
+          required:
+            - ListOfLanguagesByNameResult
+          example: >-
+            
+            <tns:ListOfLanguagesByNameResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfLanguagesByNameResult><!-- mandatory -->
+              <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tLanguage>
+             </tns:ListOfLanguagesByNameResult>
+            </tns:ListOfLanguagesByNameResponse>
+        ListOfLanguagesByCode_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfLanguagesByCode
+          type: object
+          example: >-
+            
+            <tns:ListOfLanguagesByCode
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+
+            </tns:ListOfLanguagesByCode>
+        ListOfLanguagesByCodeResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: ListOfLanguagesByCodeResponse
+          type: object
+          properties:
+            ListOfLanguagesByCodeResult:
+              $ref: "#/components/schemas/ArrayOftLanguage_type_tns"
+          required:
+            - ListOfLanguagesByCodeResult
+          example: >-
+            
+            <tns:ListOfLanguagesByCodeResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:ListOfLanguagesByCodeResult><!-- mandatory -->
+              <tns:tLanguage><!-- between zero and unlimited repetitions of this element -->
+               <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+               <tns:sName><!-- mandatory -->string</tns:sName>
+              </tns:tLanguage>
+             </tns:ListOfLanguagesByCodeResult>
+            </tns:ListOfLanguagesByCodeResponse>
+        LanguageName_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: LanguageName
+          type: object
+          properties:
+            sISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sISOCode
+          example: >-
+            
+            <tns:LanguageName
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sISOCode><!-- mandatory -->string</tns:sISOCode>
+            </tns:LanguageName>
+        LanguageNameResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: LanguageNameResponse
+          type: object
+          properties:
+            LanguageNameResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - LanguageNameResult
+          example: >-
+            
+            <tns:LanguageNameResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:LanguageNameResult><!-- mandatory -->string</tns:LanguageNameResult>
+            </tns:LanguageNameResponse>
+        LanguageISOCode_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: LanguageISOCode
+          type: object
+          properties:
+            sLanguageName:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sLanguageName
+          example: >-
+            
+            <tns:LanguageISOCode
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:sLanguageName><!-- mandatory -->string</tns:sLanguageName>
+            </tns:LanguageISOCode>
+        LanguageISOCodeResponse_element_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+            name: LanguageISOCodeResponse
+          type: object
+          properties:
+            LanguageISOCodeResult:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - LanguageISOCodeResult
+          example: >-
+            
+            <tns:LanguageISOCodeResponse
+            xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+             <tns:LanguageISOCodeResult><!-- mandatory -->string</tns:LanguageISOCodeResult>
+            </tns:LanguageISOCodeResponse>
+        ArrayOftContinent_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            tContinent:
+              type: array
+              items:
+                $ref: "#/components/schemas/tContinent_type_tns"
+              x-nullable: true
+          x-xsi-type: ArrayOftContinent
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: ArrayOftContinent_type_tns
+        ArrayOftCurrency_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            tCurrency:
+              type: array
+              items:
+                $ref: "#/components/schemas/tCurrency_type_tns"
+              x-nullable: true
+          x-xsi-type: ArrayOftCurrency
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: ArrayOftCurrency_type_tns
+        ArrayOftCountryCodeAndName_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            tCountryCodeAndName:
+              type: array
+              items:
+                $ref: "#/components/schemas/tCountryCodeAndName_type_tns"
+              x-nullable: true
+          x-xsi-type: ArrayOftCountryCodeAndName
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: ArrayOftCountryCodeAndName_type_tns
+        ArrayOftCountryCodeAndNameGroupedByContinent_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            tCountryCodeAndNameGroupedByContinent:
+              type: array
+              items:
+                $ref: "#/components/schemas/tCountryCodeAndNameGroupedByContinent_type_tns"
+              x-nullable: true
+          x-xsi-type: ArrayOftCountryCodeAndNameGroupedByContinent
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: ArrayOftCountryCodeAndNameGroupedByContinent_type_tns
+        tCurrency_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            sISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sName:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sISOCode
+            - sName
+          x-xsi-type: tCurrency
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: tCurrency_type_tns
+        tCountryInfo_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            sISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sName:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sCapitalCity:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sPhoneCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sContinentCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sCurrencyISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sCountryFlag:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            Languages:
+              $ref: "#/components/schemas/ArrayOftLanguage_type_tns"
+          required:
+            - sISOCode
+            - sName
+            - sCapitalCity
+            - sPhoneCode
+            - sContinentCode
+            - sCurrencyISOCode
+            - sCountryFlag
+            - Languages
+          x-xsi-type: tCountryInfo
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: tCountryInfo_type_tns
+        ArrayOftCountryInfo_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            tCountryInfo:
+              type: array
+              items:
+                $ref: "#/components/schemas/tCountryInfo_type_tns"
+              x-nullable: true
+          x-xsi-type: ArrayOftCountryInfo
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: ArrayOftCountryInfo_type_tns
+        ArrayOftLanguage_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            tLanguage:
+              type: array
+              items:
+                $ref: "#/components/schemas/tLanguage_type_tns"
+              x-nullable: true
+          x-xsi-type: ArrayOftLanguage
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: ArrayOftLanguage_type_tns
+        tContinent_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            sCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sName:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sCode
+            - sName
+          x-xsi-type: tContinent
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: tContinent_type_tns
+        tCountryCodeAndName_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            sISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sName:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sISOCode
+            - sName
+          x-xsi-type: tCountryCodeAndName
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: tCountryCodeAndName_type_tns
+        tCountryCodeAndNameGroupedByContinent_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            Continent:
+              $ref: "#/components/schemas/tContinent_type_tns"
+            CountryCodeAndNames:
+              $ref: "#/components/schemas/ArrayOftCountryCodeAndName_type_tns"
+          required:
+            - Continent
+            - CountryCodeAndNames
+          x-xsi-type: tCountryCodeAndNameGroupedByContinent
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: tCountryCodeAndNameGroupedByContinent_type_tns
+        tLanguage_type_tns:
+          xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          type: object
+          properties:
+            sISOCode:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+            sName:
+              xml:
+                namespace: http://www.oorsprong.org/websamples.countryinfo
+                prefix: tns
+              type: string
+          required:
+            - sISOCode
+            - sName
+          x-xsi-type: tLanguage
+          x-xsi-type-xml:
+            namespace: http://www.oorsprong.org/websamples.countryinfo
+            prefix: tns
+          x-xsi-type-uniquename: tLanguage_type_tns
+  meta:
+    id: spc_baa3aa9e614a458a91373ca5ac220269
+    created: 1747218029563
+    modified: 1747218029564
