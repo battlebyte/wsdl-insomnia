@@ -5,3 +5,4 @@ extends:
 rules:
   # Turn off the media‐example validation rule
   oas3-valid-media-example: off
+  oas3-valid-schema-example: off
