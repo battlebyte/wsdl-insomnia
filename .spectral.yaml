@@ -1,3 +1,7 @@
-extends: ["spectral:oas", "spectral:asyncapi", "spectral:arazzo"]
-oas3-valid-media-example: "off"
-oas3-valid-schema-example: "off"
+# .spectral.yaml
+extends:
+  - spectral:oas
+
+rules:
+  # Turn off the media‐example validation rule
+  oas3-valid-media-example: off
